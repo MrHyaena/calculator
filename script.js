@@ -57,6 +57,7 @@ const numbers = document.querySelector("#numbers");
 one.addEventListener("click", () => {
     stringNumber = stringNumber + "1";
     number = Number(stringNumber);
+    display.textContent = number;
 
     console.log(number + " number");
     console.log(result + " result");
@@ -66,6 +67,7 @@ one.addEventListener("click", () => {
 two.addEventListener("click", () => {
     stringNumber = stringNumber + "2";
     number = Number(stringNumber);
+    display.textContent = number;
 
     console.log(number + " number");
     console.log(result + " result");
@@ -75,6 +77,7 @@ two.addEventListener("click", () => {
 three.addEventListener("click", () => {
     stringNumber = stringNumber + "3";
     number = Number(stringNumber);
+    display.textContent = number;
 
     console.log(number + " number");
     console.log(result + " result");
@@ -82,38 +85,45 @@ three.addEventListener("click", () => {
 });
 
 four.addEventListener("click", () => {
-    stringNumber = stringNumber + "2";
+    stringNumber = stringNumber + "4";
     number = Number(stringNumber);
+    display.textContent = number;
 });
 
 five.addEventListener("click", () => {
-    stringNumber = stringNumber + "2";
+    stringNumber = stringNumber + "5";
     number = Number(stringNumber);
+    display.textContent = number;
 });
 
 six.addEventListener("click", () => {
-    stringNumber = stringNumber + "2";
+    stringNumber = stringNumber + "6";
     number = Number(stringNumber);
+    display.textContent = number;
 });
 
 seven.addEventListener("click", () => {
-    stringNumber = stringNumber + "2";
+    stringNumber = stringNumber + "7";
     number = Number(stringNumber);
+    display.textContent = number;
 });
 
 eight.addEventListener("click", () => {
-    stringNumber = stringNumber + "2";
+    stringNumber = stringNumber + "8";
     number = Number(stringNumber);
+    display.textContent = number;
 });
 
 nine.addEventListener("click", () => {
-    stringNumber = stringNumber + "2";
+    stringNumber = stringNumber + "9";
     number = Number(stringNumber);
+    display.textContent = number;
 });
 
 zero.addEventListener("click", () => {
-    stringNumber = stringNumber + "2";
+    stringNumber = stringNumber + "0";
     number = Number(stringNumber);
+    display.textContent = number;
 });
 
 // Functions for clicking action buttons -----------------------------
@@ -147,6 +157,7 @@ equal.addEventListener("click", () => {
     number = 0;
     result = null;
     stringNumber = "";
+    display.textContent = finalResult;
 
     console.log(number + " number");
     console.log(result + " result");
@@ -174,9 +185,16 @@ function countingOperations() {
     } else {
         if (result === null) {
             result = number;
-        } else {
+            } else {
         result = result / number;
-    }
+        if (result === Infinity) {
+            finalResult = "ERROR, div by zero"
+            number = 0;
+            result = null;
+            stringNumber = "";
+
+        }
+        }
     }
 };
 
