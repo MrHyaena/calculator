@@ -1,9 +1,10 @@
 // Three variables for cycling numbers
 
-let start = 0;
 let number = 0;
-let end = 0;
-let operator = "";
+let result = 0;
+let stringNumber = "";
+let operator = "+";
+let finalResult = 0;
 
 // Basic calculator functions 
 
@@ -54,24 +55,30 @@ const numbers = document.querySelector("#numbers");
 // Functions for clicking number buttons
 
 one.addEventListener("click", () => {
-    number = 1;
+    stringNumber = stringNumber + "1";
+    number = Number(stringNumber);
+
     console.log(number + " number");
-    console.log(start + " start");
-    console.log(end + " end");
+    console.log(result + " result");
+    console.log(finalResult + " finalResult");
 });
 
 two.addEventListener("click", () => {
-    number = 2;
+    stringNumber = stringNumber + "2";
+    number = Number(stringNumber);
+
     console.log(number + " number");
-    console.log(start + " start");
-    console.log(end + " end");
+    console.log(result + " result");
+    console.log(finalResult + " finalResult");
 });
 
 three.addEventListener("click", () => {
-    number = 3;
+    stringNumber = stringNumber + "3";
+    number = Number(stringNumber);
+
     console.log(number + " number");
-    console.log(start + " start");
-    console.log(end + " end");
+    console.log(result + " result");
+    console.log(finalResult + " finalResult");
 });
 
 four.addEventListener("click", () => {
@@ -102,46 +109,59 @@ zero.addEventListener("click", () => {
     number = 0;
 });
 
-// Functions for clicking action buttons
+// Functions for clicking action buttons -----------------------------
 
 plus.addEventListener("click", () => {
     operator = "+";
-    start = end;
-    
+    operators();
 });
 
 minus.addEventListener("click", () => {
     operator = "-";
-    start = end;
-    
 });
 
 nasobeni.addEventListener("click", () => {
     operator = "*";
-    start = end;
-    
 });
 
 deleni.addEventListener("click", () => {
     operator = "/";
-    start = end;
-    
 });
 
+// Clicking Equal button ---------------------------------------------------
+
 equal.addEventListener("click", () => {
-    if (operator == "+") {
-        end = start + number;
-    } else if (operator == "-") {
-        end = start - number;
-    } else if (operator == "*") {
-        end = start * number;
-    } else {
-        end = start / number;
-    }
+    
+    countingOperations()
+    finalResult = result;
+    number = 0;
+    result = 0;
+    stringNumber = "";
+
     console.log(number + " number");
-    console.log(start + " start");
-    console.log(end + " end");
+    console.log(result + " result");
+    console.log(finalResult + " finalResult");
 });
+
+// Function for counting ---------------------------------------------
+
+function countingOperations() {
+    if (operator == "+") {
+        result = result + number;
+    } else if (operator == "-") {
+        result = result - number;
+    } else if (operator == "*") {
+        result = result * number;
+    } else {
+        result = result / number;
+    }
+};
+
+function operators() {
+    countingOperations();
+    number = 0;
+    stringNumber = "";
+};
 
 
 
