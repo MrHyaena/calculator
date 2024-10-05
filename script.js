@@ -1,7 +1,7 @@
 // Three variables for cycling numbers
 
 let number = 0;
-let result = 0;
+let result = null;
 let stringNumber = "";
 let operator = "+";
 let finalResult = 0;
@@ -82,31 +82,38 @@ three.addEventListener("click", () => {
 });
 
 four.addEventListener("click", () => {
-    number = 4;
+    stringNumber = stringNumber + "2";
+    number = Number(stringNumber);
 });
 
 five.addEventListener("click", () => {
-    number = 5;
+    stringNumber = stringNumber + "2";
+    number = Number(stringNumber);
 });
 
 six.addEventListener("click", () => {
-    number = 6;
+    stringNumber = stringNumber + "2";
+    number = Number(stringNumber);
 });
 
 seven.addEventListener("click", () => {
-    number = 7;
+    stringNumber = stringNumber + "2";
+    number = Number(stringNumber);
 });
 
 eight.addEventListener("click", () => {
-    number = 8;
+    stringNumber = stringNumber + "2";
+    number = Number(stringNumber);
 });
 
 nine.addEventListener("click", () => {
-    number = 9;
+    stringNumber = stringNumber + "2";
+    number = Number(stringNumber);
 });
 
 zero.addEventListener("click", () => {
-    number = 0;
+    stringNumber = stringNumber + "2";
+    number = Number(stringNumber);
 });
 
 // Functions for clicking action buttons -----------------------------
@@ -118,14 +125,17 @@ plus.addEventListener("click", () => {
 
 minus.addEventListener("click", () => {
     operator = "-";
+    operators();
 });
 
 nasobeni.addEventListener("click", () => {
     operator = "*";
+    operators();
 });
 
 deleni.addEventListener("click", () => {
     operator = "/";
+    operators();
 });
 
 // Clicking Equal button ---------------------------------------------------
@@ -135,7 +145,7 @@ equal.addEventListener("click", () => {
     countingOperations()
     finalResult = result;
     number = 0;
-    result = 0;
+    result = null;
     stringNumber = "";
 
     console.log(number + " number");
@@ -143,17 +153,30 @@ equal.addEventListener("click", () => {
     console.log(finalResult + " finalResult");
 });
 
-// Function for counting ---------------------------------------------
+// Functions for counting ---------------------------------------------
 
 function countingOperations() {
     if (operator == "+") {
+        if (result === null) {
+            result = 0;
+        }
         result = result + number;
     } else if (operator == "-") {
+        if (result === null) {
+            result = number;
+        }
         result = result - number;
     } else if (operator == "*") {
+        if (result === null) {
+            result = 1;
+        }
         result = result * number;
     } else {
+        if (result === null) {
+            result = number;
+        } else {
         result = result / number;
+    }
     }
 };
 
