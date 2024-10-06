@@ -6,6 +6,7 @@ let stringNumber = "";
 let operator = "+";
 let finalResult = 0;
 let dotCount = 0;
+let key = "";
 
 // Here I am declaring all the constants that I am going to work with
 
@@ -113,6 +114,58 @@ back.addEventListener("click", () => {
     stringNumber = 0;
     display.textContent = stringNumber;
 });
+
+// Keyboard support
+
+document.addEventListener("keypress", logKey);
+
+function logKey(e) {
+    console.log(e.which);
+        if ((e.which == 48) || (e.which == 49) || (e.which == 50) || (e.which == 51) || (e.which == 52) || (e.which == 53) || (e.which == 54) || (e.which == 55) || (e.which == 56) || (e.which == 57)) {
+            stringNumber = stringNumber + e.key;
+            number = Number(stringNumber);
+            display.textContent = number;
+        
+        } else if (e.which == 43) {
+            operator = "+";
+            operators();
+
+        } else if (e.which == 45) {
+            operator = "-";
+            operators();
+            
+        } else if (e.which == 42) {
+            operator = "*";
+            operators();
+            
+        } else if (e.which == 47) {
+            operator = "/";
+            operators();
+        } else if (e.which == 13) {
+            countingOperations()
+            finalResult = result;
+            number = 0;
+            result = null;
+            stringNumber = "";
+            dotCount = 0;
+            if (finalResult === "ERROR") {
+                display.textContent = "ERROR";
+            } else {
+
+            display.textContent = Math.round(finalResult * 100000) / 100000;
+            }
+        } else if (e.which == 46) {
+            if (dotCount === 0) {
+    
+                stringNumber = stringNumber + ".";
+                display.textContent = stringNumber;
+                dotCount = 1;
+                }
+        } else if (e.which == 44) {
+            stringNumber = 0;
+            display.textContent = stringNumber;
+        }
+}
 
 // Functions for clicking action buttons -----------------------------
 
