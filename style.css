@@ -13,7 +13,7 @@ body {
 
 .calc {
     border-style: solid;
-    border-color: orange;
+    border-color: rgb(255, 194, 82);
     padding: 40px;
     
     
@@ -27,6 +27,7 @@ button {
     color: white;
     width: 100%;
     font-size: 30px;
+    border-radius: 10px;
 }
 
 p {
@@ -45,7 +46,6 @@ p {
     display: flex;
     width: 100%;
     gap: 10px;
-    padding-top: 10px;
 }
 
 #numbers {
@@ -54,33 +54,60 @@ p {
 
 .equal {
     flex: 1;
+    padding-top: 10px;
 }
 
 .nums {
     display: flex;
     height: 100px;
     gap: 10px;
-    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 #equal {
     height: 100%;
+    background-color: rgb(224, 163, 48);
 }
+
+/* Operator buttons */
 
 .operatorsButtons {
     display: flex;
     height: 100px;
+    gap: 10px;
 }
+
+.firstThree {
+    display: flex;
+    flex: 3;
+    gap: 10px;
+}
+
+.deleni {
+    flex: 1;
+}
+
+#deleni {
+    flex-grow: 1;
+    height: 100%;
+}
+
+#plus, #minus, #nasobeni, #deleni {
+    background-color: rgb(59, 59, 59);
+}
+
+/* Display with counting */
 
 .displayField {
     width: 400px;
     height: 100px;
     margin: 0px;
     border-style: solid;
-    border-color: orange;
+    border-color: rgb(80, 80, 80);
     border-radius: 8px;
     display: flex;
     justify-content: end;
     align-items: center;
     box-sizing: border-box;
+    background-color: rgb(80, 80, 80);
 }
