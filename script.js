@@ -5,7 +5,7 @@ let result = null;
 let stringNumber = "";
 let operator = "+";
 let finalResult = 0;
-
+let dotCount = 0;
 
 // Here I am declaring all the constants that I am going to work with
 
@@ -29,6 +29,7 @@ const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
 const zero = document.querySelector("#zero");
 const del = document.querySelector("#delete");
+const dot = document.querySelector("#dot");
 
 const numbers = document.querySelector("#numbers");
 
@@ -38,30 +39,18 @@ one.addEventListener("click", () => {
     stringNumber = stringNumber + "1";
     number = Number(stringNumber);
     display.textContent = number;
-
-    console.log(number + " number");
-    console.log(result + " result");
-    console.log(finalResult + " finalResult");
 });
 
 two.addEventListener("click", () => {
     stringNumber = stringNumber + "2";
     number = Number(stringNumber);
     display.textContent = number;
-
-    console.log(number + " number");
-    console.log(result + " result");
-    console.log(finalResult + " finalResult");
 });
 
 three.addEventListener("click", () => {
     stringNumber = stringNumber + "3";
     number = Number(stringNumber);
     display.textContent = number;
-
-    console.log(number + " number");
-    console.log(result + " result");
-    console.log(finalResult + " finalResult");
 });
 
 four.addEventListener("click", () => {
@@ -106,6 +95,17 @@ zero.addEventListener("click", () => {
     display.textContent = number;
 });
 
+// Buttcon with . sign
+
+dot.addEventListener("click", () => {
+    if (dotCount === 0) {
+    
+    stringNumber = stringNumber + ".";
+    display.textContent = stringNumber;
+    dotCount = 1;
+    }
+});
+
 // Functions for clicking action buttons -----------------------------
 
 plus.addEventListener("click", () => {
@@ -137,11 +137,13 @@ equal.addEventListener("click", () => {
     number = 0;
     result = null;
     stringNumber = "";
-    display.textContent = Math.round(finalResult * 100000) / 100000;
+    dotCount = 0;
+    if (finalResult === "ERROR") {
+        display.textContent = "ERROR";
+    } else {
 
-    console.log(number + " number");
-    console.log(result + " result");
-    console.log(finalResult + " finalResult");
+    display.textContent = Math.round(finalResult * 100000) / 100000;
+    }
 });
 
 del.addEventListener("click", () => {
@@ -151,10 +153,7 @@ del.addEventListener("click", () => {
     result = null;
     stringNumber = "";
     display.textContent = 0;
-
-    console.log(number + " number");
-    console.log(result + " result");
-    console.log(finalResult + " finalResult");
+    dotCount = 0;
 });
 
 // Functions for counting ---------------------------------------------

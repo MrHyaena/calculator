@@ -70,11 +70,15 @@ p {
 }
 
 #zero {
-    flex: 7;
+    flex: 1;
 }
 
 #delete {
-    flex: 3;
+    flex: 1;
+}
+
+#dot {
+    flex: 1;
 }
 
 /* Operator buttons */
