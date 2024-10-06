@@ -6,27 +6,6 @@ let stringNumber = "";
 let operator = "+";
 let finalResult = 0;
 
-// Basic calculator functions 
-
-function plusFunction(a, b) {
-    c = a + b
-    return c;
-};
-
-function minusFunction(a, b) {
-    c = a - b
-    return c;
-};
-
-function nasobeniFunction(a, b) {
-    c = a * b
-    return c;
-};
-
-function deleniFunction(a, b) {
-    c = a / b
-    return c;
-};
 
 // Here I am declaring all the constants that I am going to work with
 
@@ -49,6 +28,7 @@ const seven = document.querySelector("#seven");
 const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
 const zero = document.querySelector("#zero");
+const del = document.querySelector("#delete");
 
 const numbers = document.querySelector("#numbers");
 
@@ -157,7 +137,20 @@ equal.addEventListener("click", () => {
     number = 0;
     result = null;
     stringNumber = "";
-    display.textContent = finalResult;
+    display.textContent = Math.round(finalResult * 100000) / 100000;
+
+    console.log(number + " number");
+    console.log(result + " result");
+    console.log(finalResult + " finalResult");
+});
+
+del.addEventListener("click", () => {
+    
+    countingOperations()
+    number = 0;
+    result = null;
+    stringNumber = "";
+    display.textContent = 0;
 
     console.log(number + " number");
     console.log(result + " result");

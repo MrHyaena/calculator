@@ -69,6 +69,14 @@ p {
     background-color: rgb(224, 163, 48);
 }
 
+#zero {
+    flex: 7;
+}
+
+#delete {
+    flex: 3;
+}
+
 /* Operator buttons */
 
 .operatorsButtons {
