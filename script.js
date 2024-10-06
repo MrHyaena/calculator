@@ -190,7 +190,7 @@ function countingOperations() {
         if (result === Infinity) {
             finalResult = "ERROR, div by zero"
             number = 0;
-            result = null;
+            result = "ERROR";
             stringNumber = "";
 
         }

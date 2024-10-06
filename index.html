@@ -8,29 +8,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <p id="display">0</p>
-    </div>
-    <div id="numbers">
-        <button id="one">1</button>
-        <button id="two">2</button>
-        <button id="three">3</button>
-        <button id="four">4</button>
-        <button id="five">5</button>
-        <button id="six">6</button>
-        <button id="seven">7</button>
-        <button id="eight">8</button>
-        <button id="nine">9</button>
-        <button id="zero">0</button>
-    </div>
-    <div>
-        <button id="plus">+</button>
-        <button id="minus">-</button>
-        <button id="nasobeni">*</button>
-        <button id="deleni">/</button>
-    </div>
-    <div>
-        <button id="equal">=</button>
+    <div class="outside">
+        <div class="calc">
+            <div class="displayField">
+                <p id="display">0</p>
+            </div>
+            <div class="btns">
+                <div class="operatorsButtons">
+                    <button id="plus">+</button>
+                    <button id="minus">-</button>
+                    <button id="nasobeni">x</button>
+                    <button id="deleni">/</button>
+                </div>
+                <div class="numberEqual">
+                    <div id="numbers">
+                        <div class="nums">
+                            <button id="one">1</button>
+                            <button id="two">2</button>
+                            <button id="three">3</button>
+                        </div>
+                        <div class="nums">
+                            <button id="four">4</button>
+                            <button id="five">5</button>
+                            <button id="six">6</button>
+                        </div>
+                        <div class="nums">
+                            <button id="seven">7</button>
+                            <button id="eight">8</button>
+                            <button id="nine">9</button>
+                        </div>
+                        <div class="nums">
+                            <button id="zero">0</button>
+                        </div>
+                    </div>
+                    <div class="equal">
+                        <button id="equal">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

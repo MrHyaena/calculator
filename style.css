@@ -1,0 +1,86 @@
+.outside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(39, 39, 39);
+    height: 100vh;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.calc {
+    border-style: solid;
+    border-color: orange;
+    padding: 40px;
+    
+    
+    border-radius: 10px;
+    background-color: rgb(22, 22, 22);
+    
+}
+
+button {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    width: 100%;
+    font-size: 30px;
+}
+
+p {
+    font-size: 40px;
+    color: white;
+    padding-right: 20px;
+}
+
+/* Buttons with nums and equal */
+
+.btns {
+    padding: 20px 0px 0px 0px;
+}
+
+.numberEqual {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+#numbers {
+    flex: 3;
+}
+
+.equal {
+    flex: 1;
+}
+
+.nums {
+    display: flex;
+    height: 100px;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+#equal {
+    height: 100%;
+}
+
+.operatorsButtons {
+    display: flex;
+    height: 100px;
+}
+
+.displayField {
+    width: 400px;
+    height: 100px;
+    margin: 0px;
+    border-style: solid;
+    border-color: orange;
+    border-radius: 8px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    box-sizing: border-box;
+}
