@@ -30,6 +30,7 @@ const nine = document.querySelector("#nine");
 const zero = document.querySelector("#zero");
 const del = document.querySelector("#delete");
 const dot = document.querySelector("#dot");
+const back = document.querySelector("#back");
 
 const numbers = document.querySelector("#numbers");
 
@@ -104,6 +105,13 @@ dot.addEventListener("click", () => {
     display.textContent = stringNumber;
     dotCount = 1;
     }
+});
+
+// Button stepback
+
+back.addEventListener("click", () => {
+    stringNumber = 0;
+    display.textContent = stringNumber;
 });
 
 // Functions for clicking action buttons -----------------------------
